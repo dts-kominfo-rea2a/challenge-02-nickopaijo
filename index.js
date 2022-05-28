@@ -37,6 +37,21 @@ function lakukanLooping(arrPegawai) {
   */
   let jumlahWanita = null;
 
+  hasilLooping = [];
+  for (let i = 0; i < dataYangAkanDilooping.length; i++) {
+    let data = "";
+    data +=
+      dataYangAkanDilooping[i].namaDepan +
+      " " +
+      dataYangAkanDilooping[i].namaBelakang;
+    hasilLooping.push(data);
+    if (dataYangAkanDilooping[i].jenisKelamin === "M") {
+      jumlahPria += 1;
+    }
+    if (dataYangAkanDilooping[i].jenisKelamin === "F") {
+      jumlahWanita += 1;
+    }
+  }
   /*
     TODO 4: Buatlah sebuah variabel bernama "komentar"
       yang akan mengomentari apakah lebih banyak Pria atau Wanita
@@ -49,6 +64,16 @@ function lakukanLooping(arrPegawai) {
         "Jumlah Pria dan Wanita berimbang"
   */
   let komentar = null;
+
+  if (jumlahPria == jumlahWanita) {
+    komentar = "Jumlah Pria dan Wanita berimbang";
+  } else {
+    if (jumlahPria > jumlahWanita) {
+      komentar = "Jumlah Pria lebih banyak dari Wanita";
+    } else {
+      komentar = "Jumlah Wanita lebih banyak dari Pria";
+    }
+  }
 
   // ! JANGAN DIMODIFIKASI
   return {
